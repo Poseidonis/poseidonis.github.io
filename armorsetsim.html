@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Shannon Keola">
+		<meta name="description" content="A personal website to host/assemble all
+			of my public info and personal projects and act as a digital resume.">
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+		<link rel="stylesheet" href="css/armorsetsim.css">
+		<title>An Exercise in Frontend</title>
+	</head>
+	<body>
+		<main>
+      <div class="flex-container">
+        <div class="flex-row">
+          <div class="option-section">
+            <p class="header-text">Options</p>
+            <div class="options">
+              <div class="options-col">
+                <div class="option">
+                  <input type="checkbox" id="useDeco" autocomplete="off" name="options" onclick="pressCheckbox(this.id)">
+                  <label for="useDeco" title="Use potential decorations towards criteria">Use Decorations</label>
+                </div>
+                <div class="option">
+                  <input type="checkbox" id="inclSlotArmors" autocomplete="off" name="options" onclick="pressCheckbox(this.id)">
+                  <label for="inclSlotArmors" title="Includes pieces that have slots and no skills (eg. Vaik Chest)">Incl. Pure Slots</label>
+                </div>
+                <div class="option">
+                  <select name="result-cap" id="result-cap" onchange="updateResultCap(this)">
+                    <option value="100" selected>100</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="10000">10000</option>
+                  </select>
+                  <p class="option-dropdown-text" title="Stops searching after results hit the cap">Result Cap</p>
+                </div>
+              </div>
+              <div class="options-col" style="align-items: center;">
+                <button class="option" type="button" id="toggleCharm" onclick="toggleCharmTab()">Toggle Charms</button>
+                <button class="option" type="button" id="toggleArmor" onclick="toggleArmorTab()">Toggle Details</button> <!--temp button-->
+                <div class="flex-col">
+                  <p style="margin: 2px;">Weapon Slots</p>
+                  <div class="flex-row">
+                    <button type="button" name="weaponSlots" id="weaponSlots" onclick="incrementSlot(this)">0</button>
+                    <button type="button" name="weaponSlots" id="weaponSlots" onclick="incrementSlot(this)">0</button>
+                    <button type="button" name="weaponSlots" id="weaponSlots" onclick="incrementSlot(this)">0</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="title-section">
+            <p class="title">Shathena's MH: Rise Armor Set Search
+            </p>
+            <!-- <p class="title-sub">Calculate the perfect set for all your skill set needs!</p> -->
+          </div>
+        </div>
+        <div class="simulator-section">
+          <div class="search-section">
+            <div class="subheader">
+              <p class="header-text">Search Skills</p>
+            </div>
+            <div class="search-bar">
+              <select name="skills" id="skill-select">
+                <option value="" selected disabled>--choose a skill--</option>
+              </select>
+              <button type="button" onclick="addSkill()">Add</button>
+            </div>
+            <div class="selected-skills" id="selected-skills">
+            </div>
+            <button class="search-button" type="button" onclick="search()">Search</button>
+          </div>
+          <div class="results-section" id="results-section">
+            <div class="subheader" style="margin-right: 8px;">
+              <p class="header-text border-right-light">Head</p>
+              <p class="header-text border-right-light">Chest</p>
+              <p class="header-text border-right-light">Arms</p>
+              <p class="header-text border-right-light">Waist</p>
+              <p class="header-text border-right-light">Legs</p>
+              <p class="header-text border-right-light">Deco Available</p>
+              <p class="header-text" style="flex: 1;"> </p>
+            </div>
+            <div class="results" id="results">
+              <div class="flex-center" id="no-results">
+                <p style="font-size: 30px;">No results found...</p>
+              </div>
+            </div>
+          </div>
+          <div class="charms-section" id="charms-section">
+            <div class="subheader">
+              <p class="header-text">Charms</p>
+            </div>
+            <div class="flex-row-hidden" id="charms-container">
+              <div class="charms">
+                <div class="flex-row">
+                  <div class="flex-col border-right-dark">
+                    <div class="subheader">
+                      <p class="subheader-text">Add New Charm</p>
+                    </div>
+                    <div class="flex-row">
+                      <div class="charm-config-col">
+                        <label for="add-skill1" id="add-skill1-label">Skill 1
+                        </label>
+                        <label for="add-level1" id="add-level1-label">Level
+                        </label>
+                        <label for="add-skill2" id="add-skill2-label">Skill 2
+                        </label>
+                        <label for="add-level2" id="add-level2-label">Level
+                        </label>
+                      </div>
+                      <div class="charm-config-col">
+                        <label for="add-slot1" id="add-slot1-label">Slot 1
+                        </label>
+                        <label for="add-slot2" id="add-slot2-label">Slot 2
+                        </label>
+                        <label for="add-slot3" id="add-slot3-label">Slot 3
+                        </label>
+                        <button type="button" id="add-charm-button" onclick="addNewCharm()">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-col">
+                    <div class="subheader">
+                      <p class="subheader-text">Edit Charm</p>
+                    </div>                    
+                    <div class="flex-row">
+                      <div class="charm-config-col">
+                        <label for="edit-skill1" id="edit-skill1-label">Skill 1
+                        </label>
+                        <label for="edit-level1" id="edit-level1-label">Level
+                        </label>
+                        <label for="edit-skill2" id="edit-skill2-label">Skill 2
+                        </label>
+                        <label for="edit-level2" id="edit-level2-label">Level
+                        </label>
+                      </div>
+                      <div class="charm-config-col">
+                        <label for="edit-slot1" id="edit-slot1-label">Slot 1
+                        </label>
+                        <label for="edit-slot2" id="edit-slot2-label">Slot 2
+                        </label>
+                        <label for="edit-slot3" id="edit-slot3-label">Slot 3
+                        </label>
+                        <button type="button" id="edit-charm-button" disabled>Edit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="charms-imported">
+                  <div class="subheader">
+                    <p class="subheader-text">Current Charm List</p>
+                  </div>
+                  <div class="charms-list" id="charms-list">
+
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col">
+                <div class="charms-port">
+                  <div class="subheader">
+                    <p class="subheader-text">Import Charms</p>
+                  </div>
+                  <textarea id="import" name="import" autocomplete="off"></textarea>
+                  <button type="button" onclick="importCharms()" style="flex: 1; margin: 10px auto;">Import</button>
+                </div>
+                <div class="charms-port" style="border-top: 2px solid black">
+                  <div class="subheader">
+                    <p class="subheader-text">Export Charms</p>
+                  </div>
+                  <textarea id="export" name="export"></textarea>
+                  <button type="button" onclick="exportCharms()" style="flex: 1; margin: 10px auto;">Export</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="armor-section" id="armor-section">
+            <div class="subheader">
+              <p class="header-text" style="flex: 3; border-right: 2px solid black">Set Details</p>
+              <p class="header-text" style="flex: 1;">Set List</p>
+            </div>
+            <div class="flex-row-hidden" id="armor-container">
+              <div class="armor-details">
+                <div class="flex-col-hidden border-right-dark">
+                  <div class="subheader">
+                    <p class="subheader-text border-right-light" style="flex: 3;">Skills</p>
+                    <p class="subheader-text">Level</p>
+                  </div>
+                  <div class="scroll-col" id="skills-col">
+
+                  </div>
+                </div>
+                <div class="flex-col-hidden border-right-dark">
+                  <div class="subheader">
+                    <p class="subheader-text border-right-light" style="flex: 3;">Decoration</p>
+                    <p class="subheader-text">Count</p>
+                  </div>
+                  <div class="scroll-col" id="deco-col">
+
+                  </div>
+                </div>
+                <div class="flex-col-hidden">
+                  <div class="flex-col-hidden" style="flex: 2;">
+                    <div class="subheader">
+                      <p class="subheader-text">Armor Info</p>
+                    </div>
+                    <div class="flex-col" id="armor-col">
+
+                    </div>
+                  </div>
+                  <div class="flex-col-hidden" style="border-top: 1px solid black">
+                    <div class="subheader">
+                      <p class="subheader-text">Charm Info</p>
+                    </div>
+                    <div class="flex-col" id="charm-col">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="armor-list">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		</main>
+		<script type="text/javascript" src="js/armorsetsim.js"></script>
+	</body>
+</html>

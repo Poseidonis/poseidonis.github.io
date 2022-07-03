@@ -1209,6 +1209,111 @@
     ],
     "defense": 120
   },
+  "Kaiser X": {
+    "skills": [
+      {
+        "name": "Critical Eye",
+        "level": 3
+      },
+      {
+        "name": "Critical Boost",
+        "level": 1
+      }
+    ],
+    "slots": [
+      1,
+      1,
+      1
+    ],
+    "defense": 120
+  },
+  "Malzeno": {
+    "skills": [
+      {
+        "name": "Weakness Exploit",
+        "level": 1
+      },
+      {
+        "name": "Wirebug Whisperer",
+        "level": 2
+      }
+    ],
+    "slots": [
+      2,
+      2
+    ],
+    "defense": 120
+  },
+  "Storge": {
+    "skills": [
+      {
+        "name": "Bloodlust",
+        "level": 1
+      },
+      {
+        "name": "Coalescence",
+        "level": 2
+      }
+    ],
+    "slots": [
+      3
+    ],
+    "defense": 120
+  },
+  "Grand God's Peer": {
+    "skills": [
+      {
+        "name": "Heroics",
+        "level": 2
+      },
+      {
+        "name": "Maximum Might",
+        "level": 1
+      }
+    ],
+    "slots": [
+      4,
+      1
+    ],
+    "defense": 116
+  },
+  "Bazelgeuse X": {
+    "skills": [
+      {
+        "name": "Artillery",
+        "level": 1
+      },
+      {
+        "name": "Guard",
+        "level": 2
+      },
+      {
+        "name": "Razor Sharp",
+        "level": 1
+      }
+    ],
+    "slots": [
+      3
+    ],
+    "defense": 118
+  },
+  "Archfiend Armor": {
+    "skills": [
+      {
+        "name": "Weakness Exploit",
+        "level": 1
+      },
+      {
+        "name": "Resentment",
+        "level": 2
+      }
+    ],
+    "slots": [
+      4,
+      2
+    ],
+    "defense": 126
+  },
   "Sinister Demon": {
     "skills": [
       {
@@ -1493,7 +1598,7 @@
     ],
     "defense": 70
   },
-  "Ibushi": {
+  "Ibushi Pure": {
     "skills": [
       {
         "name": "Wind Alignment",
@@ -1506,10 +1611,16 @@
       {
         "name": "Evade Extender",
         "level": 1
+      },
+      {
+        "name": "Stormsoul",
+        "level": 1
       }
     ],
-    "slots": [],
-    "defense": 66
+    "slots": [
+      2
+    ],
+    "defense": 122
   },
   "Narwa": {
     "skills": [

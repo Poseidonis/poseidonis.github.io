@@ -4,11 +4,11 @@
     "slots": [],
     "defense": 0
   },
-  "Kamura": {
+  "Kamura Legacy": {
     "skills": [
       {
         "name": "Divine Blessing",
-        "level": 1
+        "level": 2
       },
       {
         "name": "Resuscitate",
@@ -16,11 +16,11 @@
       }
     ],
     "slots": [
-      1
+      2
     ],
-    "defense": 30
+    "defense": 80
   },
-  "Leather": {
+  "Leather X": {
     "skills": [
       {
         "name": "Geologist",
@@ -29,42 +29,51 @@
       {
         "name": "Hunger Resistance",
         "level": 1
+      },
+      {
+        "name": "Carving Pro",
+        "level": 1
       }
     ],
     "slots": [
-      1,
+      4,
       1
     ],
-    "defense": 30
+    "defense": 80
   },
-  "Chainmail": {
+  "Chainmail X": {
     "skills": [
       {
-        "name": "Botanist",
+        "name": "Stamina Surge",
         "level": 1
       },
       {
         "name": "Defense Boost",
-        "level": 1
+        "level": 2
       }
     ],
     "slots": [
-      2
+      4
     ],
-    "defense": 32
+    "defense": 82
   },
-  "Hunter": {
+  "Hunter X": {
     "skills": [
       {
         "name": "Item Prolonger",
         "level": 1
-      }
+      },
+      {
+        "name": "Attack Boost",
+        "level": 2
+      },
     ],
     "slots": [
       2
     ],
-    "defense": 32
+    "defense": 82
   },
+/*
   "Alloy": {
     "skills": [
       {
@@ -81,7 +90,8 @@
     ],
     "defense": 32
   },
-  "Bone": {
+*/
+  "Bone X": {
     "skills": [
       {
         "name": "Stamina Thief",
@@ -93,10 +103,11 @@
       }
     ],
     "slots": [
-      1
+      4
     ],
-    "defense": 32
+    "defense": 82
   },
+/*
   "Skalda": {
     "skills": [
       {
@@ -109,7 +120,43 @@
     ],
     "defense": 32
   },
-  "Bnahabra": {
+*/  "Rhenoplos X": {
+    "skills": [
+      {
+        "name": "Pierce Up",
+        "level": 2
+      },
+            {
+        "name": "Stun Resistance",
+        "level": 1
+      },
+            {
+        "name": "Muck Resistance",
+        "level": 1
+      }
+    ],
+    "slots": [
+      3
+    ],
+    "defense": 90
+  },
+  "Bullfango Mask X": {
+    "skills": [
+      {
+        "name": "Diversion",
+        "level": 1
+      },
+      {
+        "name": "Agitator",
+        "level": 3
+      },
+    ],
+    "slots": [
+      3
+    ],
+    "defense": 86
+  },
+  "Bnahabra X": {
     "skills": [
       {
         "name": "Poison Attack",
@@ -121,10 +168,45 @@
       }
     ],
     "slots": [
-      2
+      4,
+      1
     ],
-    "defense": 34
+    "defense": 84
   },
+  "Hornetaur": {
+    "skills": [
+      {
+        "name": "Resuscitate",
+        "level": 2
+      },
+      {
+        "name": "Recovery Up",
+        "level": 1
+      }
+    ],
+    "slots": [
+      3
+    ],
+    "defense": 86
+  },
+  "Velociprey": {
+    "skills": [
+      {
+        "name": "Attack Boost",
+        "level": 1
+      },
+      {
+        "name": "Stun Resistance",
+        "level": 1
+      }
+    ],
+    "slots": [
+      4,
+      1
+    ],
+    "defense": 86
+  },
+/*
   "Izuchi": {
     "skills": [
       {
@@ -138,20 +220,25 @@
     ],
     "defense": 36
   },
-  "Baggi": {
+*/
+  "Baggi X": {
     "skills": [
       {
-        "name": "Ice Attack",
-        "level": 2
+        "name": "Sleep Attack",
+        "level": 1
+      },
+      {
+        "name": "Ice Resistance",
+        "level": 1
       }
     ],
     "slots": [
-      2,
+      4,
       1
     ],
-    "defense": 36
+    "defense": 86
   },
-  "Kulu": {
+  "Kulu-Ya-Ku X": {
     "skills": [
       {
         "name": "Maximum Might",
@@ -299,18 +386,6 @@
       3
     ],
     "defense": 42
-  },
-  "Bullfango": {
-    "skills": [
-      {
-        "name": "Bludgeoner",
-        "level": 2
-      }
-    ],
-    "slots": [
-      1
-    ],
-    "defense": 36
   },
   "Volvidon": {
     "skills": [

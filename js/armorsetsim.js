@@ -778,8 +778,9 @@ function incrementSlot(elem){
   } else if(elem.innerText == "2"){
     elem.innerText = "3";
   } else if(elem.innerText == "3"){
+    elem.innerText = "4";
+  } else if(elem.innerText == "4"){
     elem.innerText = "0";
-  }
 }
 
 /////////////////////////
